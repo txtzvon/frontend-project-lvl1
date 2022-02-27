@@ -1,0 +1,12 @@
+#Name of workflow
+ name: make lint 
+ on:
+ 	- push 
+ jobs:
+   runs-on: ubuntu-latest 
+   steps:
+     - name: my-step
+       run: make lint 
+
+
+
