@@ -10,7 +10,7 @@ let countOfAttempts = 0;
 const askQuestion = () => {
   const randomeCount = _.random(1, 99);
   if (countOfAttempts === 3) {
-    return console.log(`Congratulatin, ${nameOfUser}!`);
+    return console.log(`Congratulation, ${nameOfUser}!`);
   }
   console.log(`Question: ${randomeCount}`);
   const answerOfQuestion = readlineSync.question('Your answer ');
