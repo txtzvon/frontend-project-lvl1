@@ -26,3 +26,11 @@
 Для запуска игры выполните команду make brain-calc.
 
 <a href="https://asciinema.org/a/jeBgyRm6CiBorydPK64XSQvuX" target="_blank"><img src="https://asciinema.org/a/jeBgyRm6CiBorydPK64XSQvuX.svg" /></a>
+
+3. Brain gcd 
+
+Игроку необходимо найти наибольший делитель двух случайных чисел.
+
+Для запуска игры выполните команду make brain-gcd.
+
+<a href="https://asciinema.org/a/7DPJwm7FuWe3o1P8PLfC1TGFk" target="_blank"><img src="https://asciinema.org/a/7DPJwm7FuWe3o1P8PLfC1TGFk.svg" /></a>
