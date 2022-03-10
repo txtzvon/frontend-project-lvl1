@@ -18,3 +18,6 @@
 Для запуска игры выполните команду brain-even.
 
 <a href="https://asciinema.org/a/1HaQEiT6q2hfCVeD390GNkZET" target="_blank"><img src="https://asciinema.org/a/1HaQEiT6q2hfCVeD390GNkZET.svg" /></a>
+
+2. Brain calc
+
