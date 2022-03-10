@@ -15,9 +15,14 @@
 
 Игроку задается случайное число, нужно ответить, простое оно или нет.
 
-Для запуска игры выполните команду brain-even.
+Для запуска игры выполните команду make brain-even.
 
 <a href="https://asciinema.org/a/1HaQEiT6q2hfCVeD390GNkZET" target="_blank"><img src="https://asciinema.org/a/1HaQEiT6q2hfCVeD390GNkZET.svg" /></a>
 
 2. Brain calc
 
+Игроку необходимо решить математическое выражение.
+
+Для запуска игры выполните команду make brain-calc.
+
+<a href="https://asciinema.org/a/jeBgyRm6CiBorydPK64XSQvuX" target="_blank"><img src="https://asciinema.org/a/jeBgyRm6CiBorydPK64XSQvuX.svg" /></a>
