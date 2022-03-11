@@ -34,3 +34,11 @@
 Для запуска игры выполните команду make brain-gcd.
 
 <a href="https://asciinema.org/a/7DPJwm7FuWe3o1P8PLfC1TGFk" target="_blank"><img src="https://asciinema.org/a/7DPJwm7FuWe3o1P8PLfC1TGFk.svg" /></a>
+
+4. Brain progression
+
+Игроку необходимо найти число, которое отсутвует в арифмитической прогрессии.
+
+Для запуска игры выполните программу make brain-progression.
+
+<a href="https://asciinema.org/a/DPnJJ28T1f2yrBM4y7Idyoivv" target="_blank"><img src="https://asciinema.org/a/DPnJJ28T1f2yrBM4y7Idyoivv.svg" /></a>
