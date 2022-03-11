@@ -8,16 +8,25 @@ const progressionOfNum = () => {
   let result;
   let correctCounter = 0;
 
-do {
+  const searchElement = (collection, step, lastElement) => {
+    const newArr = collection.split(' ');
+    // eslint-disable-next-line no-shadow
+    const result = lastElement - (step * (newArr.length - _.indexOf(newArr, '..') - 1));
+    return result;
+  };
+
+  do {
     const Array = [];
+    let firstNum = _.random(1, 9);
     const stepOfProgression = _.random(1, 15);
+
     for (let i = 0; i < 10; i += 1) {
-      Array.push(stepOfProgression);
+      firstNum += stepOfProgression;
+      Array.push(firstNum);
     }
     Array[_.random(0, 9)] = '..';
-    const StringOfArray = Array.join(' ');
     const question = Array.join(' ');
-    // const correctAnswer = String(divider(firstNum, secondNum));
+    const correctAnswer = String(searchElement(question, stepOfProgression, firstNum));
     result = levelOfGame(question, correctAnswer);
     if (result === 'true') {
       correctCounter += 1;
