@@ -42,3 +42,11 @@
 Для запуска игры выполните программу make brain-progression.
 
 <a href="https://asciinema.org/a/DPnJJ28T1f2yrBM4y7Idyoivv" target="_blank"><img src="https://asciinema.org/a/DPnJJ28T1f2yrBM4y7Idyoivv.svg" /></a>
+
+5. Braim prime 
+
+Игроку необходимо ответить правильно просте число или нет.
+
+Для запуска игры выполните программу make brain-prime.
+
+<a href="https://asciinema.org/a/Tv0aUb21CmleK68SIHFAnggut" target="_blank"><img src="https://asciinema.org/a/Tv0aUb21CmleK68SIHFAnggut.svg" /></a>
