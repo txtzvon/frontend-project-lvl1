@@ -1,6 +1,4 @@
-import {
-  greetingUser, finalMessage, levelOfGame, getRandomNum,
-} from '../index.js';
+import { getRandomNum, engine } from '../index.js';
 
 const Calculator = () => {
   greetingUser();

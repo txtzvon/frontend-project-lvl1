@@ -2,29 +2,22 @@ import readlineSync from 'readline-sync';
 
 export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-let nameOfUser;
 // eslint-disable-next-line import/prefer-default-export
-export const greetingUser = () => {
+// eslint-disable-next-line consistent-return
+export const engine = (instruction, round) => {
   console.log('Welcome to the Brain Games!');
-  nameOfUser = readlineSync.question('May I have your name? ');
+  const nameOfUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameOfUser}!`);
-};
+  console.log(instruction);
 
-export const levelOfGame = (question, correctAnswer) => {
-  let result;
-  console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer === correctAnswer) {
+  for (let i = 0; i < 3; i += 1) {
+    const [question, correctAnswer] = round();
+    console.log(`Question: ${question}`);
+    const answerOfUser = readlineSync.question('Your answer: ');
+    if (answerOfUser !== correctAnswer) {
+      return console.log(`'${answerOfUser}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+    }
     console.log('Correct!');
-    result = 'true';
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-    result = 'false';
   }
-  return result;
-};
-
-export const finalMessage = (Counter) => {
-  const message = (Counter === 3) ? `Congratulations, ${nameOfUser}!` : `Let's try again, ${nameOfUser}!`;
-  console.log(message);
+  console.log(`Congratulations, ${nameOfUser}!`);
 };
