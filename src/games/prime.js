@@ -1,33 +1,24 @@
-import {
-  greetingUser, finalMessage, levelOfGame, getRandomNum,
-} from '../index.js';
+import { getRandomNum, engine } from '../index.js';
 
-const isPrime = (num) => {
-  if (num <= 1) {
-    return false;
-  }
-  for (let i = 2; i <= num / 2; i += 1) {
-    if (num % i === 0) {
+const brainPrime = () => {
+  const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const isPrime = (num) => {
+    if (num <= 1) {
       return false;
     }
-  }
-  return true;
-};
-const brainPrime = () => {
-  greetingUser();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  let result;
-  let correctCounter = 0;
-
-  do {
+    for (let i = 2; i <= num / 2; i += 1) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+  const round = () => {
     const question = getRandomNum(1, 100);
     const correctAnswer = isPrime(question) ? 'yes' : 'no';
-    result = levelOfGame(question, correctAnswer);
-    if (result === 'true') {
-      correctCounter += 1;
-    }
-  } while (result === 'true' && correctCounter < 3);
-
-  finalMessage(correctCounter);
+    return [question, correctAnswer];
+  };
+  engine(instruction, round);
 };
+
 export default brainPrime;
