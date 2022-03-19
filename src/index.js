@@ -15,7 +15,7 @@ export const engine = (instruction, round) => {
     console.log(`Question: ${question}`);
     const answerOfUser = readlineSync.question('Your answer: ');
     if (answerOfUser !== correctAnswer) {
-      return console.log(`'${answerOfUser}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      return console.log(`'${answerOfUser}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${nameOfUser}!`);
     }
     console.log('Correct!');
   }
