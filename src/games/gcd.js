@@ -1,5 +1,6 @@
-import _ from 'lodash';
-import { greetingUser, finalMessage, levelOfGame } from '../index.js';
+import {
+  greetingUser, finalMessage, levelOfGame, getRandomNum,
+} from '../index.js';
 
 const largestDivider = () => {
   greetingUser();
@@ -20,8 +21,8 @@ const largestDivider = () => {
   };
 
   do {
-    const firstNum = _.random(1, 50);
-    const secondNum = _.random(1, 50);
+    const firstNum = getRandomNum(1, 50);
+    const secondNum = getRandomNum(1, 50);
     const question = `${firstNum} ${secondNum}`;
     const correctAnswer = String(divider(firstNum, secondNum));
     result = levelOfGame(question, correctAnswer);

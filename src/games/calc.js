@@ -1,5 +1,6 @@
-import _ from 'lodash';
-import { greetingUser, levelOfGame, finalMessage } from '../index.js';
+import {
+  greetingUser, finalMessage, levelOfGame, getRandomNum,
+} from '../index.js';
 
 const Calculator = () => {
   greetingUser();
@@ -24,9 +25,9 @@ const Calculator = () => {
   };
 
   do {
-    const randomOfSing = sings[_.random(0, 2)];
-    const numFirst = _.random(1, 25);
-    const numSecond = _.random(1, 25);
+    const randomOfSing = sings[getRandomNum(0, 2)];
+    const numFirst = getRandomNum(1, 25);
+    const numSecond = getRandomNum(1, 25);
     const question = `${numFirst} ${randomOfSing} ${numSecond}`;
     const correctAnswer = String(checkOfAnswer(randomOfSing, numFirst, numSecond));
     result = levelOfGame(question, correctAnswer);

@@ -1,5 +1,6 @@
-import _ from 'lodash';
-import { greetingUser, finalMessage, levelOfGame } from '../index.js';
+import {
+  greetingUser, finalMessage, levelOfGame, getRandomNum,
+} from '../index.js';
 
 export default function brainEven() {
   greetingUser();
@@ -10,7 +11,7 @@ export default function brainEven() {
   let result;
   let correctCounter = 0;
   do {
-    const question = _.random(1, 99);
+    const question = getRandomNum(1, 50);
     const correctAnswer = isEven(question);
     result = levelOfGame(question, correctAnswer);
     if (result === 'true') {

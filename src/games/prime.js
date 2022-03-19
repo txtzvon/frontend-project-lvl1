@@ -1,5 +1,6 @@
-import _ from 'lodash';
-import { greetingUser, finalMessage, levelOfGame } from '../index.js';
+import {
+  greetingUser, finalMessage, levelOfGame, getRandomNum,
+} from '../index.js';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -19,7 +20,7 @@ const brainPrime = () => {
   let correctCounter = 0;
 
   do {
-    const question = _.random(1, 100);
+    const question = getRandomNum(1, 100);
     const correctAnswer = isPrime(question) ? 'yes' : 'no';
     result = levelOfGame(question, correctAnswer);
     if (result === 'true') {
