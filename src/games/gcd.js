@@ -1,13 +1,7 @@
-import {
-  greetingUser, finalMessage, levelOfGame, getRandomNum,
-} from '../index.js';
+import { getRandomNum, engine } from '../index.js';
 
-const largestDivider = () => {
-  greetingUser();
-  console.log('Find the greatest common divisor of given numbers.');
-
-  let result;
-  let correctCounter = 0;
+const brainGcd = () => {
+  const instruction = 'Find the greatest common divisor of given numbers.';
 
   const divider = (x, y) => {
     while (y) {
@@ -19,19 +13,15 @@ const largestDivider = () => {
     }
     return x;
   };
-
-  do {
+  const round = () => {
     const firstNum = getRandomNum(1, 50);
     const secondNum = getRandomNum(1, 50);
     const question = `${firstNum} ${secondNum}`;
     const correctAnswer = String(divider(firstNum, secondNum));
-    result = levelOfGame(question, correctAnswer);
-    if (result === 'true') {
-      correctCounter += 1;
-    }
-  } while (result === 'true' && correctCounter < 3);
+    return [question, correctAnswer];
+  };
 
-  finalMessage(correctCounter);
+  engine(instruction, round);
 };
 
-export default largestDivider;
+export default brainGcd;
