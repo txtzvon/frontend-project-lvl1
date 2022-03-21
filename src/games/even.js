@@ -1,13 +1,11 @@
-import { getRandomNum, engine } from '../index.js';
+import engine from '../index.js';
+import { getRandomNumber, isEven } from '../utils/util.js';
 
 const brainEvenGame = () => {
   const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-  const isEven = (num) => ((num % 2 === 0) ? 'yes' : 'no');
-
   const round = () => {
-    const question = getRandomNum(1, 50);
-    const correctAnswer = isEven(question);
+    const question = getRandomNumber(1, 50);
+    const correctAnswer = isEven(question) ? 'yes' : 'no';
     return [question, correctAnswer];
   };
 

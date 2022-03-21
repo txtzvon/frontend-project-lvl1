@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-// eslint-disable-next-line import/prefer-default-export
-// eslint-disable-next-line consistent-return
-export const engine = (instruction, round) => {
+const engine = (instruction, round) => {
   console.log('Welcome to the Brain Games!');
   const nameOfUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameOfUser}!`);
@@ -19,5 +15,7 @@ export const engine = (instruction, round) => {
     }
     console.log('Correct!');
   }
-  console.log(`Congratulations, ${nameOfUser}!`);
+  return console.log(`Congratulations, ${nameOfUser}!`);
 };
+
+export default engine;
