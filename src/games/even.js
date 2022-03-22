@@ -1,5 +1,7 @@
 import engine from '../index.js';
-import { getRandomNumber, isEven } from '../utils/util.js';
+import getRandomNumber from '../utils/util.js';
+
+const isEven = (num) => num % 2 === 0;
 
 const brainEvenGame = () => {
   const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';

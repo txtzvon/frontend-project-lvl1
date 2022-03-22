@@ -1,5 +1,16 @@
 import engine from '../index.js';
-import { getRandomNumber, searchDivider } from '../utils/util.js';
+import getRandomNumber from '../utils/util.js';
+
+const searchDivider = (x, y) => {
+  let secondDiv = y;
+  let firstDiv = x;
+  while (secondDiv) {
+    const t = secondDiv;
+    secondDiv = firstDiv % secondDiv;
+    firstDiv = t;
+  }
+  return firstDiv;
+};
 
 const brainGcd = () => {
   const instruction = 'Find the greatest common divisor of given numbers.';
