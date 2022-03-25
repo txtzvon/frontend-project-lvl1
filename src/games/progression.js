@@ -1,34 +1,30 @@
 import engine from '../index.js';
-import getRandomNumber from '../utils/util.js';
+import getRandomNumber from '../util.js';
 
-const getResultCounting = (collection, step, lastElement) => {
-  const newArr = collection.split(' ');
-  const result = lastElement - (step * (newArr.length - newArr.indexOf('..') - 1));
-  return result;
-};
+const description = 'What number is missing in the progression?';
+const lengthProgression = 10;
 
-const formatingProgression = () => {
+const formatingProgression = (firstNumber, step, skip) => {
   const progression = [];
-  let firstNum = getRandomNumber(1, 9);
-  const stepOfProgression = getRandomNumber(1, 15);
-  for (let i = 0; i < 10; i += 1) {
-    firstNum += stepOfProgression;
-    progression.push(firstNum);
+  let countOfProgression = firstNumber;
+  for (let i = 0; i < lengthProgression; i += 1) {
+    countOfProgression += step;
+    progression.push(countOfProgression);
   }
-  progression[getRandomNumber(0, 9)] = '..';
-  const randomProgression = progression.join(' ');
-  return [firstNum, stepOfProgression, randomProgression];
+  progression[skip] = '..';
+  return progression.join(' ');
+};
+const makeRound = () => {
+  const firstNum = getRandomNumber(1, 9);
+  const stepOfProgression = getRandomNumber(1, 15);
+  const skippedPosition = getRandomNumber(0, lengthProgression - 1);
+  const question = formatingProgression(firstNum, stepOfProgression, skippedPosition);
+  const correctAnswer = String(firstNum + (stepOfProgression * (skippedPosition + 1)));
+  return [question, correctAnswer];
 };
 
 const brainProgression = () => {
-  const instruction = 'What number is missing in the progression?';
-
-  const round = () => {
-    const [firstNum, stepOfProgression, question] = formatingProgression();
-    const correctAnswer = String(getResultCounting(question, stepOfProgression, firstNum));
-    return [question, correctAnswer];
-  };
-  engine(instruction, round);
+  engine(description, makeRound);
 };
 
 export default brainProgression;
